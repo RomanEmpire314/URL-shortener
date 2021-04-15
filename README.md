@@ -24,3 +24,7 @@ Things you may want to cover:
 * ...
 
 Use gem clearance for user authentication
+DB
+user has_many url
+url belongs to user
+nested routes

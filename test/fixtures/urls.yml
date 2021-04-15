@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  long_url: MyString
+  short_url: MyString
+  num_clicks: 1
+  user_id: 1
+
+two:
+  long_url: MyString
+  short_url: MyString
+  num_clicks: 1
+  user_id: 1

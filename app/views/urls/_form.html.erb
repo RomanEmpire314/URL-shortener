@@ -1,0 +1,34 @@
+<%= form_with(model: url) do |form| %>
+  <% if url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(url.errors.count, "error") %> prohibited this url from being saved:</h2>
+
+      <ul>
+        <% url.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :long_url %>
+    <%= form.text_field :long_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_url %>
+    <%= form.text_field :short_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_clicks %>
+    <%= form.number_field :num_clicks %>
+  </div>
+  
+  <% form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
