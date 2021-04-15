@@ -10,5 +10,10 @@
   <%= @user.email %>
 </p>
 
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<%= button_to "All links", urls_path, method: "get" %>  
+<%= button_to "Add a new link", new_url_path, method: "get" %>
+
+<%= render "search" %>

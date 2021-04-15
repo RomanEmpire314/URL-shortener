@@ -1,0 +1,5 @@
+<%= form_with url: urls_search_path, method: :get do |f| %>
+  <%= f.label :inquiry, "Search for:" %>
+  <%= f.text_field :inquiry %>
+  <%= f.submit "Search" %>
+<% end %>

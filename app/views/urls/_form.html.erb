@@ -25,8 +25,8 @@
     <%= form.label :num_clicks %>
     <%= form.number_field :num_clicks %>
   </div>
-  
-  <% form.hidden_field :user_id, value: current_user.id %>
+
+  <%= form.hidden_field :user_id, value: current_user.id.to_i %>
 
   <div class="actions">
     <%= form.submit %>

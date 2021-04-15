@@ -3,11 +3,14 @@ class UrlsController < ApplicationController
 
   # GET /urls or /urls.json
   def index
-    @urls = Url.all
+    @urls = Url.where(user_id: current_user)
   end
 
   # GET /urls/1 or /urls/1.json
   def show
+    puts @url.inspect
+    @url.update(num_clicks: (@url.num_clicks + 1))
+    redirect_to @url.long_url
   end
 
   # GET /urls/new
@@ -19,9 +22,17 @@ class UrlsController < ApplicationController
   def edit
   end
 
+  def search
+    puts("params: #{params[:inquiry]}")
+    @url_table = Url.search(params[:inquiry], current_user.id)
+  end
+
   # POST /urls or /urls.json
   def create
     @url = Url.new(url_params)
+    @url.num_clicks = 0
+    @url.short_url = helpers.generate_short_url
+    @url.long_url = helpers.clean_up(@url.long_url)
 
     respond_to do |format|
       if @url.save
@@ -64,6 +75,6 @@ class UrlsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def url_params
-      params.require(:url).permit(:long_url, :short_url, :num_clicks, :user_id)
+      params.require(:url).permit(:long_url, :short_url, :num_clicks, :user_id, :search)
     end
 end

@@ -28,3 +28,4 @@ DB
 user has_many url
 url belongs to user
 nested routes
+Add index on short_url
