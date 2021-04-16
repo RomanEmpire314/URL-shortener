@@ -1,6 +1,5 @@
 <div>
     <% if not @url_table.nil? and @url_table.exists? %>
-        <%= @url_table.inspect %>
         <% url = @url_table.first%>
         <h3><%= url.long_url %></h3>
         <%= button_to "Follow the link", url_path(url), method: "get", class: "mt-2 btn btn-primary btn-lg" %>
