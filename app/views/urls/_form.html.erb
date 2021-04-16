@@ -16,16 +16,6 @@
     <%= form.text_field :long_url %>
   </div>
 
-  <div class="field">
-    <%= form.label :short_url %>
-    <%= form.text_field :short_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :num_clicks %>
-    <%= form.number_field :num_clicks %>
-  </div>
-
   <%= form.hidden_field :user_id, value: current_user.id.to_i %>
 
   <div class="actions">

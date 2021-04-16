@@ -9,7 +9,7 @@ class Url < ApplicationRecord
         if inquiry.length < 8 
             return nil
         end
-        # Get the last 8 letters of the string
+        # Users can enter any part of the short url, as long as the last 8 characters are present
         code = inquiry[-8..-1]
         inquiry = "https://shtnr/" + code
         return Url.where(user_id: uid).where(short_url: inquiry)
