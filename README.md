@@ -16,7 +16,7 @@ Access `/` and sign-in or sign-up. The app will direct user to user's main page
     2. Re-add short link if unavailable or be redirected to a page with the long link
     3. Click "Follow the link" or go back if the link is wrong
 
-# Database/schema
+# Database/schema & infrastructure
 <strong>Run on PostgreSQL</strong>
 
 <img src="URL_Shortener_infrastructure.png" title="DB Associations" width="70%">
