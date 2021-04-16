@@ -48,30 +48,5 @@ Current encoding algorithm is sufficient for an app for user keeping record of t
 Short_url is `[a-z0-9A-Z]` containing 62 letters. We would convert from url_id (base 10) to short_url (base 62) and vice versa. This is the problem of converting between bases (similar problem: binary to/from decimal). The biggest base 10 we can get is `(61*62^7 + 61*62^6 + ... + 61*62^0`) 2.18E+14 should be sufficient
 
 Assuming mathematic calculations don't take significant time, encoding and retrival has complexity of O(1) which is amazing!
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-DB
-user has_many url
-url belongs to user
-Add index on short_url
-
-delete
+### Future addition
+For now the app is only tested by running the main functionalities on local and Heroku. If I had more time, I would add automated testing with rspec
