@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
   resources :urls, except: [:edit]
   get '/search', to: 'urls#search', as: "urls_search"
+  get '/download', to: 'urls#download', as: "download"
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   constraints Clearance::Constraints::SignedIn.new do

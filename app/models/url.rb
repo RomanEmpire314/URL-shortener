@@ -1,3 +1,5 @@
+require 'csv'
+
 class Url < ApplicationRecord
     belongs_to :user
 
@@ -14,4 +16,16 @@ class Url < ApplicationRecord
         inquiry = "https://shtnr/" + code
         return Url.where(user_id: uid).where(short_url: inquiry)
     end
+
+    def self.to_csv
+        attributes = %w{short_url long_url num_clicks}
+    
+        CSV.generate(headers: true) do |csv|
+          csv << attributes
+    
+          all.each do |url|
+            csv << attributes.map{ |attr| url.send(attr) }
+          end
+        end
+      end
 end

@@ -8,9 +8,13 @@ class UrlsController < ApplicationController
 
   # GET /urls/1 or /urls/1.json
   def show
-    puts @url.inspect
     @url.update(num_clicks: (@url.num_clicks + 1))
     redirect_to @url.long_url
+  end
+
+  def download
+    @urls = Url.where(user_id: current_user)
+    send_data @urls.to_csv, filename: "shrtn-url-#{Date.today}.csv"
   end
 
   # GET /urls/new
@@ -18,12 +22,8 @@ class UrlsController < ApplicationController
     @url = Url.new
   end
 
-  # GET /urls/1/edit
-  def edit
-  end
-
+  # GET /search
   def search
-    puts("params: #{params[:inquiry]}")
     @url_table = Url.search(params[:inquiry], current_user.id)
   end
 
