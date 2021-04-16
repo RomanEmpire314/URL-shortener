@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<div class="container text-center text-lg-left">
+  <h3>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </h3>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <h3>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </h3>
+
+  <p>
+    <%= button_to 'Edit profile', edit_user_path(@user), method: "get", class: "mt-2 btn btn-warning" %>
+  </p>
+
+</div>
+
+<div class="container text-center text-lg-left">
+    <%= button_to "All links", urls_path, method: "get", class: "mt-2 btn btn-primary btn-lg" %>
+    <%= button_to "Add a new link", new_url_path, method: "get", class: "mt-2 btn btn-primary btn-lg" %>
+</div>
 
 
-<p><%= button_to 'Edit profile', edit_user_path(@user), method: "get" %></p>
-<p><%= button_to "All links", urls_path, method: "get" %></p>
-<p><%= button_to "Add a new link", new_url_path, method: "get" %></p>
+
 
 <%= render "search" %>

@@ -1,0 +1,22 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.myForm {
+    min-width: 500px;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem
+}
+
+.btn {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px
+}
+
+.btn-primary {
+    width: 200px;
+}

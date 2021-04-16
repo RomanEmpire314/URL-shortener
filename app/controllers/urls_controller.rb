@@ -36,7 +36,7 @@ class UrlsController < ApplicationController
 
     respond_to do |format|
       if @url.save
-        format.html { redirect_to user_path(current_user), notice: "Url was successfully created." }
+        format.html { redirect_to user_path(current_user), notice: "Url was successfully created, short link: #{@url.short_url}" }
         format.json { render :index, status: :created, location: @url }
       else
         format.html { render :new, status: :unprocessable_entity }

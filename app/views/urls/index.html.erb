@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Long url</th>
-      <th>Short url</th>
-      <th>Num clicks</th>
-      <th>User</th>
+      <th><h3>Long url</h3></th>
+      <th><h3>Short url</h3><th>
+      <th><h3>Num clicks</h3></th>
+      <th><h3>User</h3></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,12 +16,13 @@
   <tbody>
     <% @urls.each do |url| %>
       <tr>
+        <p>
         <td><%= url.long_url %></td>
         <td><%= url.short_url %></td>
         <td><%= url.num_clicks %></td>
-        <td><%= url.user_id %></td>
-        <td><%= button_to "Follow the link", url_path(url), method: "get" %></td>
-        <td><%= link_to 'Delete link', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "Follow the link", url_path(url), method: "get", class: "mt-2 btn-sm btn-primary" %></td>
+        <td><%= link_to 'Delete link', url, method: :delete, data: { confirm: 'Are you sure?' }, class: "mt-2 btn-sm btn-primary" %></td>
+        </p>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +30,4 @@
 
 <br>
 
-<%= link_to 'New Url', new_url_path %> | 
-<%= link_to 'Back', user_path(current_user) %>
+<%= link_to 'Back', user_path(current_user), class: "mt-2 btn btn-warning" %>
