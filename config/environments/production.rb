@@ -62,8 +62,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "url_shortener_production"
 
+  # Mailer config
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'https://mysterious-depths-24936.herokuapp.com/' }
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => "plant.clinique1@gmail.com",
+    :password             => "plantvszombie420",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
